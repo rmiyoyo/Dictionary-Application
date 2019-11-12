@@ -1,6 +1,6 @@
 """
 This is the very first program I have followed through in a tutorial and 
-managed to write from start to finish without errors. 
+managed to write from start to finish. Tonnes of errors in the process but here we are.
 I tried it more than once to make to work. I am very proud it did.
 """
 import json
