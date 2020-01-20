@@ -5,6 +5,7 @@ I tried it more than once to make to work. I am very proud it did.
 """
 import json
 from difflib import get_close_matches
+from googletrans import Translator
 
 data = json.load(open("data.json"))
 
