@@ -27,7 +27,8 @@ def translate(w):
 	pass
 
 word = input("Enter your word: ")
-output = translate(word)
+translator = Translator()
+output = translator.translate(translate(word), dest='sw')
 
 if type(output) == list:
 	for item in output:
