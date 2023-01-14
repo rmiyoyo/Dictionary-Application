@@ -7,14 +7,14 @@ Desktop based application for an offline dictionary.
 - difflib
 - googletrans
 
-## Running
+## Usage
 
 To run this project, install the dependencies listed in the requirements.txt file.
 ```bash
 pip install -r requirements.txt
 ```
 
-Run
+To run the application, open your terminal, navigate to the directory where the python script and the json file are located, and run the script using the following command:
 ```bash 
 python dictionary.py
 ```
