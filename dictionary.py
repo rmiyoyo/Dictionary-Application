@@ -1,15 +1,10 @@
-"""
-This is the very first program I have followed through in a tutorial and 
-managed to write from start to finish. Tonnes of errors in the process but here we are.
-I tried it more than once to make to work. I am very proud it did.
-"""
 import json
 from difflib import get_close_matches
 from googletrans import Translator
 
 data = json.load(open("data.json"))
 
-def translate(w):
+def translate_word(w):
 	w = w.lower()#Helps ignore the user's punctuation of first word.
 	if w in data:
 		return data[w]
@@ -29,7 +24,7 @@ def translate(w):
 word = input("Enter your word: ")
 translator = Translator()
 print(translator.translate(word, dest='sw'))
-output = translator.translate(translate(word), dest='sw')
+output = translator.translate(translate_word(word), dest='sw')
 
 if type(output) == list:
 	for item in output:
