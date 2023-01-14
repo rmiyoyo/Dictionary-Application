@@ -2,32 +2,14 @@ import json
 from difflib import get_close_matches
 from googletrans import Translator
 
-data = json.load(open("data.json"))
+with open("data.json") as words_file:
+	data = json.load(words_file)
 
-def translate_word(w):
-	w = w.lower()#Helps ignore the user's punctuation of first word.
-	if w in data:
-		return data[w]
-	elif len(get_close_matches(w, data.keys())) > 0:
-		yn = input("Did you mean %s instead? Reply with Y if yes, or N if no: " % get_close_matches(w, data.keys())[0])
-		yn = yn.upper()
-		if yn == "Y":
-			return data[get_close_matches(w, data.keys())[0]]
-		elif yn == "N":
-			return "The word does not exist. Please double check."
-		else:
-			return "We did not understand your reply."
-	else:
-		return "The word does not exist. Please double check."
-	pass
+def translate_word(word, langcode):
+	translator = Translator()
+	translation = translator.translate(word, dest=langcode)
 
-word = input("Enter your word: ")
-translator = Translator()
-print(translator.translate(word, dest='sw'))
-output = translator.translate(translate_word(word), dest='sw')
-
-if type(output) == list:
-	for item in output:
-		print(item)
-else:
-	print(output)
+while True:
+	word = input("Enter your word: ")
+	word = word.strip().lower()
+	
