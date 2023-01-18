@@ -49,13 +49,14 @@ def word_definition(word):
     else:
         return "This word does not exist in our dictionary."
 
-def word_translator():
+def word_translator(word, dest="es"):
 	"""
 	function that accepts two inputs, a word and the language it is to 
 	be translated to and returns the translation.
 	"""
-	pass
-
+	translate_variable = Translator()
+	translation = translate_variable.translate(word, dest="es")
+	return translation.text
 
 def main():
 	print("Welcome to Our Dictionary Program.\n")
@@ -69,7 +70,8 @@ def main():
 		definition = word_definition(user_input)
 		print(definition)
 	elif int(user_choice) == 2:
-		print("Translator coming soon!")
+		word_translation = input("Enter word to be translated: ")
+		word_translator(word_translation)
 	else:
 		print("Sorry, we did not understand your choice.")
 if __name__ == "__main__":
