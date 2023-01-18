@@ -13,7 +13,12 @@ def word_definition(word):
 
 	# if word in data, return the word
 	if word in data:
-		return data[word]
+		if len(data[word]) == 1:
+			return f"1. {data[word][0]}."
+		else:
+			definitions = data[word]
+			multiple_meanings = "\n".join([f"{i+1}. {definition}" for i, definition in enumerate(definitions)])
+			return multiple_meanings
 
 	# if word not in data, get close matches
 	elif len(get_close_matches(word, data.keys())) > 0:
@@ -22,7 +27,12 @@ def word_definition(word):
 		user_confirmation = user_confirmation.upper()
 
 		if user_confirmation == "Y":
-			return data[closest_word]
+			if len(data[closest_word]) == 1:
+				return f"1. {data[closest_word][0]}"
+			else:
+				definitions = data[closest_word]
+				multiple_meanings = "\n".join([f"{i+1}. {definition}" for i, definition in enumerate(definitions)])
+				return multiple_meanings
 		elif user_confirmation == "N":
 			return f"{word.upper()} is not available."
 		else:
