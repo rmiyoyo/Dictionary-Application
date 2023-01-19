@@ -2,8 +2,6 @@ import json
 from difflib import get_close_matches
 from googletrans import Translator
 
-# from googletrans import Translator
-
 # load dictionary file
 with open("data.json") as words_file:
     data = json.load(words_file)
@@ -59,8 +57,13 @@ def word_translator(word, dest="es"):
 	return translation.text
 
 def main():
-	print("Welcome to Our Dictionary Program.\n")
-	print("Menu")
+    """
+    main function to get user choices and call the appropriate
+    functions depending on user choices.
+    """
+    
+    print("Welcome to Our Dictionary Program.\n")
+	print("\tMenu")
 	print("1. Dictionary\n2. Translator")
 
 	user_choice = input("Enter your choice: ")
