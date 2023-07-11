@@ -1,4 +1,4 @@
-# Dictionary-Application
+# Dictionary Application
 
 Desktop based application for an offline dictionary.
 
