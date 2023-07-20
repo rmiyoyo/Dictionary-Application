@@ -61,21 +61,19 @@ def main():
     main function to get user choices and call the appropriate
     functions depending on user choices.
     """
+    print("Welcome to Our Dictionary Program.")
+    print("\tMenu")
+    print("1. Dictionary\n2. Translator")
+    user_choice = input("Enter your choice: ")
     
-    print("Welcome to Our Dictionary Program.\n")
-	print("\tMenu")
-	print("1. Dictionary\n2. Translator")
-
-	user_choice = input("Enter your choice: ")
-
-	if int(user_choice) == 1:
-		user_input = input("Enter word to be searched:")
-		definition = word_definition(user_input)
-		print(definition)
-	elif int(user_choice) == 2:
-		word_translation = input("Enter word to be translated: ")
-		word_translator(word_translation)
-	else:
-		print("Sorry, we did not understand your choice.")
+    if int(user_choice) == 1:
+        user_input = input("Enter word to be searched:")
+        definition = word_definition(user_input)
+        print(definition)
+    elif int(user_choice) == 2:
+        word_translation = input("Enter word to be translated: ")
+        word_translator(word_translation)
+    else:
+        print("Sorry, we did not understand your choice.")
 if __name__ == "__main__":
     main()
