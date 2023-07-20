@@ -47,14 +47,16 @@ def word_definition(word):
     else:
         return "This word does not exist in our dictionary."
 
+
 def word_translator(word, dest="es"):
-	"""
-	function that accepts two inputs, a word and the language it is to 
-	be translated to and returns the translation.
-	"""
-	translate_variable = Translator()
-	translation = translate_variable.translate(word, dest="es")
-	return translation.text
+    """
+    function that accepts two inputs, a word and the language it is to
+    be translated to and returns the translation.
+    """
+    translate_variable = Translator()
+    translation = translate_variable.translate(word, dest="es")
+    return translation.text
+
 
 def main():
     """
@@ -65,7 +67,7 @@ def main():
     print("\tMenu")
     print("1. Dictionary\n2. Translator")
     user_choice = input("Enter your choice: ")
-    
+
     if int(user_choice) == 1:
         user_input = input("Enter word to be searched:")
         definition = word_definition(user_input)
@@ -75,5 +77,7 @@ def main():
         word_translator(word_translation)
     else:
         print("Sorry, we did not understand your choice.")
+
+
 if __name__ == "__main__":
     main()
